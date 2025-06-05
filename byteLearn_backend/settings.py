@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-nrxei(09m*^tx*7ws)1eidyf)k+#b1($e4qzrbcr)6@f)vwiy)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['hhttps://byte-learn-backend-api.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition
