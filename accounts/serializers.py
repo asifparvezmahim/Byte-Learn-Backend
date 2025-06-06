@@ -26,3 +26,8 @@ class RegisterSerializer(serializers.ModelSerializer):
             role=validated_data['role'],
         )
         return user
+    
+
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(write_only=True, required=True)

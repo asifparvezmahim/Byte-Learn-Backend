@@ -1,3 +1,32 @@
 Super User
     i. username: developer
     ii. pass: developer
+Sample User
+    i. Username: developer_test
+    ii. Password: 123
+Demo:
+   i. Reg:     {
+            "username": "developer_test"
+            "first_name": "Mr.",
+            "last_name": "Developer",
+            "email": "dt@example.com",
+            "password": "123",
+            "confirm_password": "123",
+            "role": "admin"
+           }
+           
+
+           {
+                "username": "demoTeacher",
+                "first_name": "Demo",
+                "last_name": "Teacher",
+                "email": "demo@gmail.com",
+                "password": "123",
+                "confirm_password": "123",
+                "role": "teacher"
+
+        }
+    ii. Login : {
+            "username": "developer_test",
+            "password": "123"
+            }
