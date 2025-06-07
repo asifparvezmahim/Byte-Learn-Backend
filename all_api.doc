@@ -2,3 +2,4 @@
 
 2. Authentication:
        2.1 -> Register: https://byte-learn-backend-api.onrender.com/api/accounts/register/ 
+       2.2 -> Login: https://byte-learn-backend-api.onrender.com/api/accounts/login/
