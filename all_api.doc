@@ -5,5 +5,9 @@
        2.2 -> Login: https://byte-learn-backend-api.onrender.com/api/accounts/login/
 3. Categories
        3.1 -> Post a Category (Only For Admin Role): https://byte-learn-backend-api.onrender.com/api/course/ create-course-categories/
-
        3.2-> Get all categories(For Any User): https://byte-learn-backend-api.onrender.com/api/course/categories/
+
+4. Courses
+       4.1 -> Get all courses: https://byte-learn-backend-api.onrender.com/api/course/courses/
+       4.2 -> Get all modules: https://byte-learn-backend-api.onrender.com/api/course/course-modules/
+       4.3 -> Get all videos: https://byte-learn-backend-api.onrender.com/api/course/course-videos/

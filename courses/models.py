@@ -28,7 +28,7 @@ class Course(models.Model):
         null=True,
         related_name='courses'
     )
-
+    price=models.IntegerField(max_length=4)
 
     def __str__(self):
         return self.course_title
