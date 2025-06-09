@@ -21,6 +21,7 @@ class CourseSerializer(serializers.ModelSerializer):
             'category',
             'content_list',
             'course_cover_image',
+            'price'
         ]
         read_only_fields = ['id']
 
