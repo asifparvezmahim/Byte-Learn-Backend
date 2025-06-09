@@ -11,6 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(serializers.ModelSerializer):
+    course_cover_image = serializers.SerializerMethodField()
     class Meta:
         model = Course
         fields = [
@@ -24,6 +25,12 @@ class CourseSerializer(serializers.ModelSerializer):
             'price'
         ]
         read_only_fields = ['id']
+        
+    def get_course_cover_image(self, obj):
+        request = self.context.get('request')
+        if obj.course_cover_image and request:
+            return request.build_absolute_uri(obj.course_cover_image.url)
+        return None
 
     def validate_instructor(self, value):
         if value.role != 'teacher':

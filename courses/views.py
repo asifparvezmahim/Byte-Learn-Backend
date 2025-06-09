@@ -6,6 +6,8 @@ from rest_framework import status
 from .models import Category,Course,Course_Module,Course_Video
 from .serializers import CategorySerializer,CourseSerializer,CourseModuleSerializer,CourseVideoSerializer
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework import generics
+
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -56,10 +58,9 @@ def create_course(request):
 
 @api_view(['GET'])
 def list_courses(request):
-    """List all courses"""
     courses = Course.objects.all()
-    serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data)
+    serializer = CourseSerializer(courses, many=True, context={'request': request})
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 # Course Module Views
 
@@ -98,3 +99,7 @@ def list_course_videos(request):
     course_videos = Course_Video.objects.all()
     serializer = CourseVideoSerializer(course_videos, many=True)
     return Response(serializer.data)
+
+# At the end of views.py
+
+
