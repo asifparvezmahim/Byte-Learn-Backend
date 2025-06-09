@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Course, Category,Course_Module,Course_Video
 from accounts.models import CustomUser
+from accounts.serializers import InstructorSerializer
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,6 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(serializers.ModelSerializer):
+    instructor = InstructorSerializer(read_only=True)
     course_cover_image = serializers.SerializerMethodField()
     class Meta:
         model = Course
@@ -25,7 +27,7 @@ class CourseSerializer(serializers.ModelSerializer):
             'price'
         ]
         read_only_fields = ['id']
-        
+
     def get_course_cover_image(self, obj):
         request = self.context.get('request')
         if obj.course_cover_image and request:
