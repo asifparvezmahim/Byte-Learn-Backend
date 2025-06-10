@@ -11,3 +11,4 @@
        4.1 -> Get all courses: https://byte-learn-backend-api.onrender.com/api/course/courses/
        4.2 -> Get all modules: https://byte-learn-backend-api.onrender.com/api/course/course-modules/
        4.3 -> Get all videos: https://byte-learn-backend-api.onrender.com/api/course/course-videos/
+       4.4 -> Get Course Details: https://byte-learn-backend-api.onrender.com/api/course/course_details/<course_id>/
