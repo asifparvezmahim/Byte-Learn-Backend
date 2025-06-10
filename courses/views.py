@@ -7,7 +7,7 @@ from .models import Category,Course,Course_Module,Course_Video
 from .serializers import CategorySerializer,CourseSerializer,CourseModuleSerializer,CourseVideoSerializer
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import generics
-
+from django.shortcuts import get_object_or_404
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -100,6 +100,11 @@ def list_course_videos(request):
     serializer = CourseVideoSerializer(course_videos, many=True)
     return Response(serializer.data)
 
-# At the end of views.py
 
 
+
+@api_view(['GET'])
+def course_detail_api(request, pk):
+    course = get_object_or_404(Course, pk=pk)
+    serializer = CourseSerializer(course)
+    return Response(serializer.data, status=status.HTTP_200_OK)
