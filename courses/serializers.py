@@ -52,4 +52,12 @@ class CourseVideoSerializer(serializers.ModelSerializer):
     module = CourseModuleSerializer(read_only=True)  
     class Meta:
         model = Course_Video
-        fields = ['id', 'module', 'lecture_no', 'video_title', 'video']
+        fields = [            
+            'id',
+            'course_title',
+            'description',
+            'instructor',
+            'category',
+            'content_list',
+            'course_cover_image',
+            'price']
