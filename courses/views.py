@@ -106,5 +106,5 @@ def list_course_videos(request):
 @api_view(['GET'])
 def course_detail_api(request, pk):
     course = get_object_or_404(Course, pk=pk)
-    serializer = CourseSerializer(course)
+    serializer = CourseSerializer(course,context={'request': request})
     return Response(serializer.data, status=status.HTTP_200_OK)

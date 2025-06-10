@@ -10,7 +10,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 
-
 class CourseSerializer(serializers.ModelSerializer):
     instructor = InstructorSerializer(read_only=True)
     course_cover_image = serializers.SerializerMethodField()
