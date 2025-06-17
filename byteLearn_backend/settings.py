@@ -100,12 +100,13 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 DATABASES = {
+    # Host: 'localhost'
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'byte_learn_backend',
-       'USER': 'postgres',
-       'PASSWORD': 'password',
-       'HOST': 'localhost',
+       'USER': 'byte_learn_backend_user',
+       'PASSWORD': 'izvo7jbEOyPjyP0bLWL9fINvmHj6WPw5',
+       'HOST': 'dpg-d18gavogjchc73bj2u8g-a',  
        'PORT': '5432',
    }
 }
